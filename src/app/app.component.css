@@ -1,0 +1,50 @@
+.blog__header {
+  background-color: #e6e6e6;
+  border-bottom: 2px solid #999;
+}
+
+.blog__header--container {
+  padding: 5rem 0 3rem 12rem;
+}
+
+.blog__header--title {
+  font-size: 5rem;
+  margin-bottom: 0.7rem;
+}
+
+.blog__header--text {
+  font-size: 2.7rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  justify-items: center;
+  grid-row-gap: 5rem;
+  margin: 8rem 0 8rem 0;
+}
+
+.posts {
+  display: grid;
+  align-items: start;
+  font-size: 2rem;
+  transition: opacity 1s;
+}
+
+.post {
+  font-size: 1.8rem;
+  width: 50rem;
+}
+
+.post__data {
+  padding: 2.5rem 3.75rem 3rem 3.75rem;
+}
+
+.post__name {
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+}
+
+.post__content {
+  margin-bottom: 3rem;
+}

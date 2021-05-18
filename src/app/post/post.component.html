@@ -1,0 +1,94 @@
+<header class="post__header">
+  <!-- placeholder -->
+  <article class="blog__header--container">
+    <h1 class="blog__header--title">Blog project</h1>
+    <p class="blog__header--text">This is the best app for people with apps.</p>
+  </article>
+  <div class="post__infobox">
+    <p>Author: <span class="author__span">Name</span></p>
+    <p>website: <span class="website__span">website url</span></p>
+    <a class="header__link" href="index.html">&larr; All posts</a>
+  </div>
+  <!-- placeholder -->
+</header>
+
+<main class="container2">
+  <!-- placeholder -->
+  <div class="posts">
+    <article class="post">
+      <div class="post__data">
+        <h3 class="post__name">1 post title</h3>
+        <p class="post__content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra
+          aliquet eget sit amet. Libero enim sed faucibus turpis in eu mi
+          bibendum neque. In hendrerit gravida rutrum quisque non tellus orci.
+          Nunc mi ipsum faucibus vitae aliquet nec. Duis ut diam quam nulla
+          porttitor massa id. Ac turpis egestas integer eget aliquet nibh. Vitae
+          semper quis lectus nulla. Tincidunt augue interdum velit euismod in
+          pellentesque. Ut sem viverra aliquet eget sit amet tellus. Dignissim
+          diam quis enim lobortis scelerisque fermentum dui faucibus in. Id
+          consectetur purus ut faucibus pulvinar elementum. Orci phasellus
+          egestas tellus rutrum tellus pellentesque. Ultrices gravida dictum
+          fusce ut placerat orci nulla pellentesque.
+        </p>
+        <a class="post__link" href="#">read more &rarr;</a>
+      </div>
+    </article>
+  </div>
+  <!-- placeholder -->
+</main>
+
+<section class="comments">
+  <h2 class="comments__title">Comments</h2>
+  <p class="comments__title--underline"></p>
+
+   <!-- placeholder -->
+  <div class="comment box">
+    <p class="comment__name">John</p>
+    <p class="comment__body">Lorem ipsum</p>
+  </div>
+   <!-- placeholder -->
+</section>
+
+<section class="comment__inputs">
+  <h3 class="comment__form--title">
+    Add comment
+    <span class="comment__form--subtitle">- share your thoughts!</span>
+  </h3>
+  <p class="comments__title--underline"></p>
+  <form id="form">
+    <div class="writerName__box">
+      <label id="writerName__label" for="writerName">Name</label>
+      <input
+        id="writerName__input"
+        type="text"
+        minlength="6"
+        placeholder="eg. John Doe"
+        required
+      />
+    </div>
+
+    <div class="writerEmail__box">
+      <label id="writerEmail__label" for="writerEmail">E-mail</label>
+      <input
+        id="writerEmail__input"
+        type="email"
+        placeholder="your@email.com"
+        required
+      />
+    </div>
+
+    <label id="commentText__label" for="commentText">Comment</label>
+    <textarea
+      id="commentText__input"
+      name="commentText"
+      cols="60"
+      rows="5"
+      minlength="30"
+      required
+    ></textarea>
+
+    <input class="btn btn-lg" id="submit__button" type="submit" />
+  </form>
+</section>

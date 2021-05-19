@@ -8,24 +8,17 @@
 </header>
 
 <main class="container">
-  <div class="posts">
-     <article class="post">
-        <div class="post__data">
-          <h3 class="post__name">1 post title</h3>
-          <p class="post__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra aliquet
-            eget sit amet. Libero enim sed faucibus turpis in eu mi bibendum neque. In hendrerit
-            gravida rutrum quisque non tellus orci. Nunc mi ipsum faucibus vitae aliquet nec. Duis
-            ut diam quam nulla porttitor massa id. Ac turpis egestas integer eget aliquet nibh.
-            Vitae semper quis lectus nulla. Tincidunt augue interdum velit euismod in pellentesque.
-            Ut sem viverra aliquet eget sit amet tellus. Dignissim diam quis enim lobortis scelerisque
-            fermentum dui faucibus in. Id consectetur purus ut faucibus pulvinar elementum.
-            Orci phasellus egestas tellus rutrum tellus pellentesque. Ultrices gravida dictum fusce ut
-            placerat orci nulla pellentesque.
+  <div *ngFor="let post of posts">
+    <div class="posts">
+      <article class="post box">
+      <div class="post__data">
+          <h3 class="post__name">{{ post.id }} {{ post.title }}</h3>
+          <p class="post__content">{{ post.body }}
           </p>
-          <a class="post__link" href="#">read more &rarr;</a>
-        </div>
+          <a class="post__link" href="#" >read more &rarr;</a>
+      </div>
       </article>
-    </div>
+  </div>
+  </div>
 </main>
 <app-post></app-post>

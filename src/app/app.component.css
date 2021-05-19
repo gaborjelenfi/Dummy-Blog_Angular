@@ -21,7 +21,7 @@
   grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
   justify-items: center;
   grid-row-gap: 5rem;
-  margin: 8rem 0 8rem 0;
+  margin: 8rem auto;
 }
 
 .posts {
@@ -29,6 +29,14 @@
   align-items: start;
   font-size: 2rem;
   transition: opacity 1s;
+}
+
+.box {
+  background-color: #e6e6e6;
+  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.7rem;
+  border-bottom: 2px solid #999;
+  border-right: 2px solid #999;
 }
 
 .post {

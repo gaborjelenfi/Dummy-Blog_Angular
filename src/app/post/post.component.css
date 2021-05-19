@@ -48,14 +48,6 @@
   font-size: 1.5rem;
 }
 
-.box {
-  background-color: #e6e6e6;
-  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.7rem;
-  border-bottom: 2px solid #999;
-  border-right: 2px solid #999;
-}
-
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));

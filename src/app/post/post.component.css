@@ -48,12 +48,8 @@
   font-size: 1.5rem;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
-  justify-items: center;
-  grid-row-gap: 5rem;
-  margin: 8rem 0 8rem 0;
+.container2 {
+  padding: 5rem 8rem;
 }
 
 .posts {

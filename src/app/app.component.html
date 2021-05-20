@@ -1,24 +1,2 @@
-<header class="blog__header">
-  <article class="blog__header--container">
-    <h1 class="blog__header--title">Blog project</h1>
-    <p class="blog__header--text">
-      This is the best app for people with apps.
-    </p>
-  </article>
-</header>
+<router-outlet></router-outlet>
 
-<main class="container">
-  <div *ngFor="let post of posts">
-    <div class="posts">
-      <article class="post box">
-      <div class="post__data">
-          <h3 class="post__name">{{ post.id }} {{ post.title }}</h3>
-          <p class="post__content">{{ post.body }}
-          </p>
-          <a class="post__link" href="#" >read more &rarr;</a>
-      </div>
-      </article>
-  </div>
-  </div>
-</main>
-<app-post></app-post>

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from './http.service';
-import { Post } from './post';
+import { HttpService } from '../http.service';
+import { Post } from '../post';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-posts-list',
+  templateUrl: './posts-list.component.html',
+  styleUrls: ['./posts-list.component.css']
 })
-export class AppComponent implements OnInit {
+export class PostsListComponent implements OnInit {
   error = null;
 
   constructor(private httpService: HttpService) {}

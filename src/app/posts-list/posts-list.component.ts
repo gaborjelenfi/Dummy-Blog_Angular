@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { HttpService } from '../http.service';
 import { Post } from '../post';
 
@@ -7,11 +8,12 @@ import { Post } from '../post';
   templateUrl: './posts-list.component.html',
   styleUrls: ['./posts-list.component.css']
 })
-export class PostsListComponent implements OnInit {
+export class PostsListComponent implements OnInit, OnDestroy {
   error = null;
+  postsSub: Subscription;
+  posts: Post[];
 
   constructor(private httpService: HttpService) {}
-  posts: Post[];
 
   ngOnInit() {
     this.getPosts();
@@ -23,6 +25,10 @@ export class PostsListComponent implements OnInit {
       console.error('Couldn\'t fetch data');
       this.error = error;
     });
+  }
+
+  ngOnDestroy() {
+    this.postsSub.unsubscribe
   }
 
 }

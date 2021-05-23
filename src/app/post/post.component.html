@@ -38,15 +38,18 @@
       <span class="comment__form--subtitle">- share your thoughts!</span>
     </h3>
     <p class="comments__title--underline"></p>
-    <form id="form">
+
+    <form ngNativeValidate (ngSubmit)="onSubmit()" #f="ngForm" id="form">
       <div class="writerName__box">
         <label id="writerName__label" for="writerName">Name</label>
         <input
           id="writerName__input"
           type="text"
+          placeholder="Name"
           minlength="6"
-          placeholder="eg. John Doe"
           required
+          ngModel
+          name="commenterName"
         />
       </div>
 
@@ -57,20 +60,25 @@
           type="email"
           placeholder="your@email.com"
           required
+          email
+          ngModel
+          name="commenterEmail"
         />
       </div>
 
       <label id="commentText__label" for="commentText">Comment</label>
       <textarea
         id="commentText__input"
-        name="commentText"
         cols="60"
         rows="5"
-        minlength="30"
+        placeholder="Thoughts"
+        minlength="3"
         required
+        ngModel
+        name="commenterText"
       ></textarea>
 
-      <input class="btn btn-lg" id="submit__button" type="submit" />
+      <button class="btn btn-lg" id="submit__button" type="submit">Add</button>
     </form>
   </section>
 </div>

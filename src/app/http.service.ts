@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Post } from './post';
@@ -8,6 +8,9 @@ import { PostComment } from './comment';
   providedIn: 'root'
 })
 export class HttpService {
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -21,5 +24,9 @@ export class HttpService {
 
   getComments(): Observable<PostComment[]> {
     return this.http.get<PostComment[]>('http://localhost:3000/comments');
+  }
+
+  addComment(newComment: PostComment): Observable<PostComment> {
+    return this.http.post<PostComment>('http://localhost:3000/comments', newComment, this.httpOptions);
   }
 }

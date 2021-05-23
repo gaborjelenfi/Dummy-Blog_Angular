@@ -20,7 +20,7 @@ export class PostsListComponent implements OnInit, OnDestroy {
   }
 
   getPosts(): void {
-    this.httpService.getPosts().subscribe(posts => this.posts = posts.slice(0, 30),
+    this.postsSub = this.httpService.getPosts().subscribe(posts => this.posts = posts.slice(0, 30),
     error => {
       console.error('Couldn\'t fetch data');
       this.error = error;

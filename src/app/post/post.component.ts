@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { HttpService } from '../http.service';
 import { Post } from '../post';
+import { PostComment } from '../comment';
 
 @Component({
   selector: 'app-post',
@@ -12,8 +13,10 @@ import { Post } from '../post';
 export class PostComponent implements OnInit, OnDestroy {
   idSub: Subscription;
   postSub: Subscription;
+  commentSub: Subscription;
   postId: string;
   post: Post;
+  comments: PostComment[];
   fullName: 'John Doe';
   website: 'google.com';
 
@@ -26,13 +29,16 @@ export class PostComponent implements OnInit, OnDestroy {
     this.idSub = this.activatedRoute.params.subscribe(params => {
       this.postId = params['id'];
       this.getPost(this.postId);
+      this.getComments(this.postId);
     });
   }
 
   getPost(id: string) {
-    this.postSub = this.httpService.getPost(id).subscribe(post => {
-      console.log(post);
-      this.post = post});
+    this.postSub = this.httpService.getPost(id).subscribe(post => this.post = post);
+  }
+
+  getComments(id: string) {
+    this.commentSub = this.httpService.getComments().subscribe(comments => this.comments = comments.filter(c => c.postId === +id).reverse());
   }
 
   ngOnDestroy() {

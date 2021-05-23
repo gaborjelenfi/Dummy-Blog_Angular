@@ -24,9 +24,11 @@
     <h2 class="comments__title">Comments</h2>
     <p class="comments__title--underline"></p>
 
-    <div class="comment box">
-      <p class="comment__name">comment Name</p>
-      <p class="comment__body">comment body</p>
+    <div *ngIf="comments">
+      <div class="comment box" *ngFor="let comment of comments">
+        <p class="comment__name">{{ comment.name }}</p>
+        <p class="comment__body">{{ comment.body }} </p>
+      </div>
     </div>
   </section>
 

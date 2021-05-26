@@ -60,6 +60,6 @@ export class PostComponent implements OnInit, OnDestroy {
     this.idSub.unsubscribe;
     this.postSub.unsubscribe;
     this.commentSub.unsubscribe;
-    this.addCommentSub.unsubscribe;
+    if(this.addCommentSub) this.addCommentSub.unsubscribe;
   }
 }

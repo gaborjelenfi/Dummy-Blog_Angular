@@ -130,6 +130,11 @@
   margin-top: 2rem;
 }
 
+.alert {
+  position: relative;
+  display: block;
+}
+
 #writerName__label,
 #writerEmail__label,
 #commentText__label {

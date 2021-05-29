@@ -50,7 +50,11 @@
           required
           ngModel
           name="commenterName"
+          #name="ngModel"
         />
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger mt-1" role="alert">
+         Too short name!
+        </div>
       </div>
 
       <div class="writerEmail__box">
@@ -63,7 +67,11 @@
           email
           ngModel
           name="commenterEmail"
+          #email="ngModel"
         />
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger mt-1" role="alert">
+          Invalid email!
+        </div>
       </div>
 
       <label id="commentText__label" for="commentText">Comment</label>
@@ -72,11 +80,15 @@
         cols="60"
         rows="5"
         placeholder="Thoughts"
-        minlength="3"
+        minlength="30"
         required
         ngModel
         name="commenterText"
+        #text="ngModel"
       ></textarea>
+      <div *ngIf="text.invalid && (text.dirty || text.touched)" class="alert alert-danger mt-1" role="alert">
+        Too short comment!
+      </div>
 
       <button class="btn btn-lg" id="submit__button" type="submit">Add</button>
     </form>

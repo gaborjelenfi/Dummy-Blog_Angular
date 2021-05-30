@@ -13,7 +13,7 @@
       <article class="post box">
       <div class="post__data">
           <h3 class="post__name">{{ post.id }} {{ post.title }}</h3>
-          <p class="post__content">{{ post.body }}
+          <p class="post__content">{{ post.body.length > 100 ? post.body.substring(0, 100) : post.body }}
           </p>
           <a class="post__link" routerLink="/posts/{{post.id}}" >read more &rarr;</a>
       </div>

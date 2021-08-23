@@ -30,6 +30,7 @@ export class PostComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    // Get the id from the URL
     this.idSub = this.activatedRoute.params.subscribe(params => {
       this.postId = params['id'];
       this.getPost(this.postId);
@@ -41,6 +42,7 @@ export class PostComponent implements OnInit, OnDestroy {
     this.postSub = this.httpService.getPost(id).subscribe(post => this.post = post);
   }
 
+ // Get comments for correct post and reversed the order
   getComments(id: string) {
     this.commentSub = this.httpService.getComments().subscribe(comments => this.comments = comments.filter(c => c.postId === +id).reverse());
   }
@@ -52,6 +54,7 @@ export class PostComponent implements OnInit, OnDestroy {
       "name": this.commentForm.value.commenterName,
       "postId": +this.postId
     }
+    // Add new comment as first element to comments array
     this.addCommentSub = this.httpService.addComment(data).subscribe(data => this.comments.unshift(data));
     this.commentForm.reset();
   }

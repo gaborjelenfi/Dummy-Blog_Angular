@@ -19,6 +19,7 @@ export class PostsListComponent implements OnInit, OnDestroy {
     this.getPosts();
   }
 
+ // Get posts, limited to 30 posts
   getPosts(): void {
     this.postsSub = this.httpService.getPosts().subscribe(posts => this.posts = posts.slice(0, 30));
   }
